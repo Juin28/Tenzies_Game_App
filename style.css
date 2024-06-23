@@ -2,7 +2,32 @@
     box-sizing: border-box;
 }
 
+@keyframes pulse {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
 body {
+    margin: 0;
+    background: linear-gradient(45deg, #421177, #5945ab, #6899f4, #4bd0fc);
+    background-size: 400% 400%;
+    animation: pulse 10s ease infinite;
+    padding: 20px;
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* body {
     margin: 0;
     background-color: #0B2434;
     padding: 20px;
@@ -11,7 +36,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 main {
     background-color: #F5F5F5;
@@ -101,34 +126,57 @@ main {
     font-size: 2rem;
 }
 
-.roll-dice {
+.roll-dice, .restart {
     height: 50px;
     width: 150px;
+    margin: 8px;
+    
     border: none;
     border-radius: 6px;
-    background: linear-gradient(to bottom right, #0b2a56, #1c3c69, #70839d);
     color: white;
     font-size: 1.2rem;
     font-family: 'Karla', sans-serif;
     cursor: pointer;
 }
 
-.roll-dice:focus {
+.roll-dice:focus, .restart:focus {
     outline: none;
 }
 
-.roll-dice:active {
+.roll-dice:active, .restart:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.roll-dice {
+    background: linear-gradient(to bottom right, #0b2a56, #1c3c69, #70839d);
+}
+
+.restart {
+    background: linear-gradient(to bottom right, #a52607, #c34526, #d58874);
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.scores h4 {
+    margin: 20px;
+    margin-top: 10px;
 }
 
 .num-of-roll {
     margin-bottom: 0;
+    text-align: center;
 }
 
 .lowest-rolls {
     padding: 7px;
+    text-align: center;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px rgba(28, 19, 42, 0.5);
     background: linear-gradient(to bottom right, #32ec51, #6fde80, #d7e7da);
     color: black;
-}
+} 

@@ -77,6 +77,12 @@ export default function App() {
                 die
         }))
     }
+
+    function restartGame() {
+        setTenzies(false)
+        setDice(allNewDice())
+        setNumOfRoll(0)
+    }
     
     const diceElements = dice.map(die => (
         <Die 
@@ -103,8 +109,17 @@ export default function App() {
             >
                 {tenzies ? "New Game" : "Roll"}
             </button>
-            <h4 className="num-of-roll">Number of Rolls: {numOfRoll}</h4>
-            <h4 className="lowest-rolls">Best Number of Rolls: {lowestRolls}</h4>
+            <button 
+                className="restart"
+                onClick={restartGame}
+            >
+                Restart
+            </button>
+            <div className="scores">
+                <h4 className="num-of-roll">Number of Rolls: {numOfRoll}</h4>
+                <h4 className="lowest-rolls">Best Number of Rolls: {lowestRolls}</h4>
+            </div>
+            
         </main>
     )
 }
